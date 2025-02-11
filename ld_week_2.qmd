@@ -1,0 +1,11 @@
+---
+title: "Week 2 - Presentation on Sentinel 1 Radar sensor"
+format: html
+editor: visual
+---
+
+## Using Xaringan to make presentations
+
+This week's practical focused on learning about a specific satellite sensor, which in my case was the Sentinel 1 Radar satellite and making a presentation using Xaringan in R which can be found below.
+
+\`\`\`{html} <iframe src="week_2_xaringan_presentation_2.html" width="100%" height="600px"></iframe>
