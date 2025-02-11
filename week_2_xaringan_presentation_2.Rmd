@@ -37,13 +37,15 @@ IMG placeholder
 
 
 ---
-<<<<<<< HEAD
 
 # How is it used in to understand the recent fire outbreaks in California?
 
 Ban et al. (2020) on using Sentinel SAR data to train a deep neural network classifier for near-real time fire detection.
-=======
+
+---
+
 # How is it used in to understand the recent fire outbreaks in California?
+
 - Ban et al. (2020) on using Sentinel SAR data to train a deep neural network classifier for near-real time fire detection.
 
 
