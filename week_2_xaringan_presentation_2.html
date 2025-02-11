@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Week 2 Learning Diary</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tariro Mashongamhende" />
+    <script src="libs/header-attrs-2.28/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Week 2 Learning Diary
+]
+.subtitle[
+## Sentinel 1 SAR
+]
+.author[
+### Tariro Mashongamhende
+]
+.institute[
+### UCL, CASA
+]
+.date[
+### 2025/01/24 (updated: 2025-02-11)
+]
+
+---
+
+
+# What is Sentinel 1's SAR sensor?
+
+IMG placeholder
+
+
+---
+
+# How does it work and why am I interested in it?
+
+- Sentinel 1 is a an EU satellite which works by using a Radar base satellite instrument which generates images using Synthetic Aperture Radar (SAR)
+- Images are typically black and white and are the result of an active sensor that sends radiowaves and measures the time taken for the signal to return to the instrument
+- Radar wavelengths are typically longer than Red, Green and Blue wavelengths that are used in optical imagery in effect allowing SAR images to be free from cloud cover as the radiowaves are not affected by things like like clouds in the same way optical / passive sensors are such as those used in Sentinel 2
+
+---
+
+# How is it used in academic research at UCL?
+
+- Ollie Ballingers's PWTT research on building damage detection
+  - UCL lecturer Ollie Ballinger has released a paper on using SAR imagery to detect damage in buildings.
+  - His work explores the trade-offs of using machine learning approaches compared to statistical based approaches as well as discusses the two main ways SAR imagery is used to detect change and their relative merits and drawbacks, namely through phase change or amplitude change.
+
+
+---
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+
+# How is it used in to understand the recent fire outbreaks in California?
+
+Ban et al. (2020) on using Sentinel SAR data to train a deep neural network classifier for near-real time fire detection.
+=======
+# How is it used in to understand the recent fire outbreaks in California?
+- Ban et al. (2020) on using Sentinel SAR data to train a deep neural network classifier for near-real time fire detection.
+
+
+---
+
+# How can SAR be used for near real-time fire detection
+
+- In their paper "Near real-time fire detection" Ban et al. (2020) use Sentinel 1 SAR data to identify areas which have burn scars from recent fires. 
+- The paper is interesting as it goes into detail on how SAR data can be used to detect wildfires
+- Their approach involves using Sentinel 2 SWIR false color composites to identify burned areas and calculate the a difference in normalized burn ratio as pseudo-labels which are then used to train a neural network classifier with the SAR data from Sentinel 1 as input (X variables).
+- The false color composite they use which shows burned areas clearly in images is: SWIR1, SWIR2, SWIR1
+- In the process of training their model they make sure to use both VV and VH bands from Sentinel 1 to measure the changes in SAR backscatter.
+- During their analysis they noted that the expected change in SAR backscatter following a fire was observed in most cases with the exception of areas which were made up of non=forest vegetation (grassland). 
+- They also noted that VV backscatter is more sensitive to soil moisture than VH and therefore this implies changes in backscatter should also incorporate/normalise/adjust for changes in weather conditions to improve prediction accuracy.
+---
+
+# Trying it out on historic wild fires in California
+
+- What am i trying to do maybe add in the flow diagram of the analysis.
+
+
+---
+# Initial results on testing the SNNs on the SAR images
+
+
+.pull-left[
+VV backscatter similarity using a SNN for a location in California 
+
+
+]
+
+.pull-right[
+VH backscatter for the same location with fires overlaid (also using SNNs)
+
+]
+
+---
+# Reflections
+
+I have been looking at identifying whether I can replicate. some fo the rationale in the Ban et al. (2020) paper by observing changes in SAR backscatter in places in Claifornia that have experienced fires according to the California Department of Forestry and Fire Protection.
+
+In doing so I have notived that real-world application of fire detection algorithms have to deal with many implementation challenges the most prominent of which are given below:
+
+- There is some difficulty in being able to attribute changes in backscatter to a fire event in the same month or the preceding month due to other events that can also result in changes to backscatter such as soil moisture levels (Ban et al., 2020)
+- VV and VH bands are not always affected in the same way by the same change (a fire event) i.e. a fire may lead to a change in both VV and VH, or only one of VV or VH or neither.
+- The intensity (measured through the use of a proxy GIS acres burned) seems to affect the identification of changes in SAR backscatter
+  - **small fires** - fires burning &lt;1,000 acres don't seem to change SAR backscatter much at all suggesting other techniques may vbe better suited to idenfication of such systems
+  - **large fires** - fires burning &gt; 1,000 acres do seem to cause a visible change in SAR backscatter in at least one of either VV or VH bands
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
