@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "My Learning Diary QBook"
+  author: "Tariro Mashongamhende"
+  date: "2/11/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
