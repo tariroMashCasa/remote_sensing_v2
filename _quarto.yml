@@ -1,5 +1,7 @@
 project:
   type: book
+  output-dir: docs
+
 
 book:
   title: "My Learning Diary QBook"
@@ -17,8 +19,8 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
+  #pdf:
+  #  documentclass: scrreprt
 
 editor: visual
 

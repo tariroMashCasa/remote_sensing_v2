@@ -66,11 +66,6 @@ Ban et al. (2020) on using Sentinel SAR data to train a deep neural network clas
 
 - What am i trying to do maybe add in the flow diagram of the analysis.
 
-```{r}
-library(knitr)
-knitr::include_graphics('images/SNN similarity flow diagram.png')
-```
-
 
 
 ---
