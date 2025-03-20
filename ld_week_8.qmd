@@ -4,42 +4,36 @@ format: html
 editor: visual
 ---
 
-## Summary 
+## Summary
 
-- Conceptualising remote sensing images i.e. should we consider these as a pixels, objects, regions etc..
-- Examples of some datasets and implementations of classification with EO data - mainly Dynamic World and MODIS
-  - How useful is some of the data i.e. the resolution from Dynamic World - benefits and drawbacks
-- Data pipeline for classification and the implications for how to train your classification models i.e. cross-validation spatial or not spatial or doing your train test splits at the object level
-- Accuracy evaluation methods
-  - Confusion matrix (looks at precision and recall albeit with slightly different names (i.e. producer accuracy vs user accuracy) to standard ML descriptions)
-  - F1 score - better than standard user accuracy and producer accuracy 
-  - ROC & AUC - probably the best as it takes into account both accuracy and recall, basically all four boxes in the confusion matrix
-- Cross validation accounting for spatial autocorrelation 
-  - This is important in particular as the classification methods we have learned about in remote sensing tend to focus on pixel level classification which is most susceptible to spatial autocorrelation which is to say depending on what the values are in adjacent pixels, the class prediction influenced by these values
-
+-   Conceptualising remote sensing images i.e. should we consider these as a pixels, objects, regions etc..
+-   Examples of some datasets and implementations of classification with EO data - mainly Dynamic World and MODIS
+    -   How useful is some of the data i.e. the resolution from Dynamic World - benefits and drawbacks
+-   Data pipeline for classification and the implications for how to train your classification models i.e. cross-validation spatial or not spatial or doing your train test splits at the object level
+-   Accuracy evaluation methods
+    -   Confusion matrix (looks at precision and recall albeit with slightly different names (i.e. producer accuracy vs user accuracy) to standard ML descriptions)
+    -   F1 score - better than standard user accuracy and producer accuracy
+    -   ROC & AUC - probably the best as it takes into account both accuracy and recall, basically all four boxes in the confusion matrix
+-   Cross validation accounting for spatial autocorrelation
+    -   This is important in particular as the classification methods we have learned about in remote sensing tend to focus on pixel level classification which is most susceptible to spatial autocorrelation which is to say depending on what the values are in adjacent pixels, the class prediction influenced by these values
 
 ## Application
 
-This week based on a question I raised in the lecture about the impact of temporal autocorrelation in selecting train test split samples I would like to try to investigate the issue a bit further. I came across a paper about fallowing temporal patterns in Spain which made reference to temporal autocorrelation (Recuero et al., 2019). This paper did use a technique to calculate temporal autocorrrelation values at different time intervals, these were linked to their overall research questions however they used the temporal autocorrelation values as features rather than as a basis for train-test sample splitting. Nonetheless the paper was interesting as an example of how classification is being applied to measure the effectiveness of a EU wide policy, in this case the Common Agricultural Policy. 
+This week based on a question I raised in the lecture about the impact of temporal autocorrelation in selecting train test split samples I would like to try to investigate the issue a bit further. I came across a paper about fallowing temporal patterns in Spain which made reference to temporal autocorrelation (Recuero et al., 2019). This paper did use a technique to calculate temporal autocorrrelation values at different time intervals, these were linked to their overall research questions however they used the temporal autocorrelation values as features rather than as a basis for train-test sample splitting. Nonetheless the paper was interesting as an example of how classification is being applied to measure the effectiveness of a EU wide policy, in this case the Common Agricultural Policy.
 
 Recuero et al. seek to develop a better approach to existing land classification datasets which do not fully reflect the variation in land classification, in particular agricultural land that is subject to fallowing, which is basically a land management technique which allows for agricultural land to be left deliberately idle for a period of years in order for soil nutrients to be allowed to improve before being actively farmed and so on. As part of the Common Agricultural Policy farmers are paid to do this, however, land classification data for these parcels of land do not take into account their changing land use, instead giving the same parcel of land the same classification regardless of whether the land is actively being farmed or fallowed (being left idle). They process a technique using temporal autocorrelation values of NDVI to classify which areas of land are fallowed. They compare their classifications against ground truth data from the Spanish state. They present two sets of results one seemingly for their training and validation sets combined, shown below:
 
-```{r}
-
-```
+![Confusion matrix on training and validation data](images/week_9_confusion_matrix_1.png)
 
 They also present the performance of their classification technique on their test data also shown below:
 
-```{r}
+![Confusion matrix on test data](images/week_9_confusion_matrix_2.png)
 
-```
+This paper is a good example of the concepts covered in the lecture in particular, showing how results from a classification model are presented in the remote-sensing field with producer and user accuracies as well as using Kappa coefficients.
 
-This paper is a good example of the concepts covered in the lecture in particular, showing how results from a classification model are presented in the remote-sensing field with producer and user accuracies as well as using Kappa coefficients. 
-
-As can be seen they claim to have have good performance on their training and validation set and moderate performance on their testing set. I think that the performance on the training and validation set is by the by as it doesn’t provide the user any indication of what the model will actually perform like in real life so I would generally ignore it but in this case I’m highlighting it as they claim to have high producer and user accuracies, however these do not use the mean average but rather a weighted average to arrive at these values. Based on my experience in the data science field it would be more prudent to report a standard  mean average as ultimately you would like to penalise incorrect predictions when training models, the second issue is the high degree of class imbalance in the groups they are predicting, which based on the model they are using (a random forest classifier) will be affected by class imbalance. Moving on to the test results, the most immediate observation is that they get 0% of one class predicted correctly (worse than random guessing), which seems to corroborate my initial concerns about their class imbalance, suggesting their model has overfit to their training data. 
+As can be seen they claim to have have good performance on their training and validation set and moderate performance on their testing set. I think that the performance on the training and validation set is by the by as it doesn’t provide the user any indication of what the model will actually perform like in real life so I would generally ignore it but in this case I’m highlighting it as they claim to have high producer and user accuracies, however these do not use the mean average but rather a weighted average to arrive at these values. Based on my experience in the data science field it would be more prudent to report a standard mean average as ultimately you would like to penalise incorrect predictions when training models, the second issue is the high degree of class imbalance in the groups they are predicting, which based on the model they are using (a random forest classifier) will be affected by class imbalance. Moving on to the test results, the most immediate observation is that they get 0% of one class predicted correctly (worse than random guessing), which seems to corroborate my initial concerns about their class imbalance, suggesting their model has overfit to their training data.
 
 In the rest of the paper they go on to conclude that their results are consistent with empirical evidence and suggest that their approach could serve as a basis for a new classification or improved land cover data product able to provide an indication of fallowed land across Spain. I think this is a really good point as it identifies a gap in the existing data environment, proposes a methodology to address it and validates its performance against ground truth data, modelling methodology limitations notwithstanding.
-
 
 ## Reflections
 
