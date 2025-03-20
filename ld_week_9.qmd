@@ -1,0 +1,31 @@
+---
+title: "Week 9 Use of SAR data"
+format: html
+editor: visual
+---
+
+## Summary 
+
+- We covered what SAR was and how it works
+- We looked at what amplitude and phase were 
+- We looked at what types of SAR data we would most commonly come across and this was VV & VH
+- We also looked at the different bands of SAR data and the implications these could have on the sorts of analysis and use cases for remote sensing imagery
+- We then looked at how SAR data can be used for change detection and this could broadly be done in four ways:
+  1. Simple image pixel subtraction
+  2. Interferometry (InSAR and DInSAR)
+  3. Machine Learning approaches - mostly discussed ChangeOS paper
+  4. Statistical tests - discussed Ollie’s working paper on Pairwise T-tests for building damage assessments in Gaza and Ukraine. This approach seemed to outperform the deep-learning approach from ChangeOS. However there were a few questions about whether the two approaches were comparing apples with apples as on further reading the ChangeOS paper is an Object-based deep-learning model as opposed to a pixel-level model which may influence a direct comparison in terms of method
+
+
+## Application
+
+After reading the ChangeOS paper (Zheng et al., 2021) to understand how deep learning approaches have been considered in Remote Sensing change detection. One question I have is around the appropriateness of the approach the ChangeOS team have used for change detection, they have discounted the use of a full Siamese Neural Network architecture as they have found difficulty with sensitivity to minor vs complete building damage, however this is in relation to high-resolution satellite imagery and not SAR data. Also they have leveraged ResNet pretrained Convolutional Neural Network and removed the final layer of the model to apply it to this domain, however, there is a question as to whether the learned feature representations from the ResNet model are appropriate for analysis of satellite image features, which are not included in the ResNet training data and are very different in structure to the training data used in ResNet (everyday objects), which would inevitably have an effect on model performance. Resources allowing it would be more appropriate to train a model from scratch for satellite imagery detection. On another point the ChangeOS paper seems to generative in the sense that it generates masks for the pixels that have been damaged, however, in doing so they depart again from the traditional architecture of the Siamese Neural Network architecture and potentially introduce model error as their model is no longer trying to identify the degree of similarity between two images but rather the objects within each image that may differ. The approach they have used is interesting however there are a number of architectural design choices that I would not have made and rather used a an approach that would have split up areas of interest into distinct regions i.e. spatial index grid like Google S4 or Uber H3 and compared the before and after images to identify the degree of change / similarity and then aggregated joined those areas of dissimilarity against the original buildings polygon dataset as Ballinger has done in his paper (Ballinger, 2024).
+
+## Reflection
+
+Overall through reflecting on the work I have done in the past when I was asked to carry out anomaly detection analysis on water pump time series reading, the most appropriate methods were rarely deep learning approaches. Yes recurrent neural networks were okay if you had balanced data, however, the very nature of anomaly detection involves a class imbalance as you are looking to predict whether a value is abnormal. The advice I received from a data scientist who works at Astra Zeneca was to use Gaussian Mixture Models, if those failed to do the job to use Shewart Control Charts and Western Electric Company Power rules which basically aim to look at time series readings (assuming that a system operates within a fixed variation of values when working normally) and detects patterns of values that are highly unlikely to occur within a normal baseline of values. I am surprised this is not used as the change detection question is less of a cross-sectional question and more of a temporal question, and therefore I would expect to see methods like Shewart Control Charts and WECO rules, gaussian mixture models and recurrent neural networks feature in the conversation a bit more.
+
+## References
+
+Ballinger, O. (2024) ‘Open Access Battle Damage Detection via Pixel-Wise T-Test on Sentinel-1 Imagery’. Available at: https://arxiv.org/abs/2405.06323.
+Zheng, Z. et al. (2021) ‘Building damage assessment for rapid disaster response with a deep object-based semantic change detection framework: From natural disasters to man-made disasters’, Remote Sensing of Environment, 265, p. 112636. Available at: https://doi.org/10.1016/j.rse.2021.112636.

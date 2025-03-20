@@ -112,61 +112,111 @@
   {
     "objectID": "ld_week_8.html",
     "href": "ld_week_8.html",
-    "title": "4  ld_week_8",
+    "title": "4  Week 8 Classification II",
     "section": "",
     "text": "4.1 Summary",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>ld_week_8</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 8 Classification II</span>"
     ]
   },
   {
     "objectID": "ld_week_8.html#summary",
     "href": "ld_week_8.html#summary",
-    "title": "4  ld_week_8",
+    "title": "4  Week 8 Classification II",
     "section": "",
     "text": "Conceptualising remote sensing images i.e. should we consider these as a pixels, objects, regions etc..\nExamples of some datasets and implementations of classification with EO data - mainly Dynamic World and MODIS\n\nHow useful is some of the data i.e. the resolution from Dynamic World - benefits and drawbacks\n\nData pipeline for classification and the implications for how to train your classification models i.e. cross-validation spatial or not spatial or doing your train test splits at the object level\nAccuracy evaluation methods\n\nConfusion matrix (looks at precision and recall albeit with slightly different names (i.e. producer accuracy vs user accuracy) to standard ML descriptions)\nF1 score - better than standard user accuracy and producer accuracy\nROC & AUC - probably the best as it takes into account both accuracy and recall, basically all four boxes in the confusion matrix\n\nCross validation accounting for spatial autocorrelation\n\nThis is important in particular as the classification methods we have learned about in remote sensing tend to focus on pixel level classification which is most susceptible to spatial autocorrelation which is to say depending on what the values are in adjacent pixels, the class prediction influenced by these values",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>ld_week_8</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 8 Classification II</span>"
     ]
   },
   {
     "objectID": "ld_week_8.html#application",
     "href": "ld_week_8.html#application",
-    "title": "4  ld_week_8",
+    "title": "4  Week 8 Classification II",
     "section": "4.2 Application",
     "text": "4.2 Application\nThis week based on a question I raised in the lecture about the impact of temporal autocorrelation in selecting train test split samples I would try to investigate the issue a bit further. I came across a paper about fallowing temporal patterns in Spain which made reference to temporal autocorrelation (Recuero et al., 2019). This paper did use a technique to calculate temporal autocorrrelation values at different time intervals, these were linked to their overall research questions however they used the temporal autocorrelation values as features rather than as a basis for train-test sample splitting. Nonetheless the paper was interesting as an example of how classification is being applied to measure the effectiveness of a EU wide policy, in this case the Common Agricultural Policy.\nRecuero et al. seek to develop a better approach to existing land classification datasets which do not fully reflect the variation in land classification, in particular agricultural land that is subject to fallowing, which is basically a land management technique which allows for agricultural land to be left deliberately idle for a period of years in order for soil nutrients to be allowed to improve before being actively farmed and so on As part of the Common Agricultural Policy farmers are paid to do this, however, land classification data for these parcels of land do not take into account their changing land use, instead giving the same parcel of land the same classification regardless of whether the land is actively being farmed or fallowed (being left idle). They process a technique using temporal autocorrelation values of NDVI to classify which areas of land are fallowed. They compare their classifications against ground truth data from the Spanish state. They present two sets of results one seemingly for their training and validation sets combined, shown below:\nThey also present the performance of their classification technique on their test data also shown below:\nThis paper is a good example of the concepts covered in the lecture in particular, showing how results from a classification model are presented in the remote-sensing field with producer and user accuracies as well as using Kappa coefficients.\nAs can be seen they claim to have have good performance on their training and validation set and moderate performance on their testing set. I think that the performance on the training and validation set is by the by as it doesn’t provide the user any indication of what the model will actually perform like in real life so I would generally ignore it but in this case I’m highlighting it as they claim to have high producer and user accuracies, however these do not use the mean average but rather a weighted average to arrive at these values. Based on my experience in the data science field it would be more prudent to report a standard mean average as ultimately you would like to penalise incorrect predictions when training models, the second issue is the high degree of class imbalance in the groups they are predicting, which based on the model they are using (a random forest classifier) will be affected by class imbalance. Moving on to the test results, the most immediate observation is that they get 0% of one class predicted correctly (worse than random guessing), which seems to corroborate my initial concerns about their class imbalance, suggesting their model has overfit to their training data.\nIn the rest of the paper they go on to conclude that their results are consistent with empirical evidence and suggest that their approach could serve as a basis for a new classification or improved land cover data product able to provide an indication of fallowed land across Spain. I think this is a really good point as it identifies a gap in the existing data environment, proposes a methodology to address it and validates its performance against ground truth data, modelling methodology limitations notwithstanding.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>ld_week_8</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 8 Classification II</span>"
     ]
   },
   {
     "objectID": "ld_week_8.html#reflections",
     "href": "ld_week_8.html#reflections",
-    "title": "4  ld_week_8",
+    "title": "4  Week 8 Classification II",
     "section": "4.3 Reflections",
     "text": "4.3 Reflections\nOverall, Recuero et al.’s paper is a good example of how classification techniques can be applied to assist in the identification of data needed to assess the efficacy of a major EU policy. THey have provided their results in a well accepted manner providing the user transparency into how well their approach works. That said coming from a data science background there are a number of modelling choices they have made that I would not have, as well as some communication of their findings which seems to slightly overstate their findings. Their dataset seems small, that said this is perhaps because I tend to work with images, audio and system level datasets which tend to be well north of 100K rows, and this seems to affect the amount of training samples that can be provided to their models for training. Second, their use of weighted averages to report their results seems to overstate the performance of their model, as in practice this is not an approach I have seen before, this is because it is precisely the misclassification that people are interested in. The producer accuracy and user accuracy matrix results they have presented are similar in principle to precision and recall techniques used in standard machine learning, however, more commonly F1 scores and ROC / AUC is used for comparability. Lastly, as mentioned in our lecture perhaps had their train test samples been split taking spatial autocorrelation into account the performance of their approach would have fallen further. Nonetheless, I found their paper interesting and compelling as it was specific and aimed at meeting a deficiency in the existing land cover data products available for their region.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>ld_week_8</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 8 Classification II</span>"
     ]
   },
   {
     "objectID": "ld_week_8.html#references",
     "href": "ld_week_8.html#references",
-    "title": "4  ld_week_8",
+    "title": "4  Week 8 Classification II",
     "section": "4.4 References",
     "text": "4.4 References\nRecuero, L. et al. (2019) ‘Fallowing temporal patterns assessment in rainfed agricultural areas based on NDVI time series autocorrelation values’, International Journal of Applied Earth Observation and Geoinformation, 82, p. 101890. Available at: https://doi.org/10.1016/j.jag.2019.05.023.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>ld_week_8</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 8 Classification II</span>"
+    ]
+  },
+  {
+    "objectID": "ld_week_9.html",
+    "href": "ld_week_9.html",
+    "title": "5  Week 9 Use of SAR data",
+    "section": "",
+    "text": "5.1 Summary",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 9 Use of SAR data</span>"
+    ]
+  },
+  {
+    "objectID": "ld_week_9.html#summary",
+    "href": "ld_week_9.html#summary",
+    "title": "5  Week 9 Use of SAR data",
+    "section": "",
+    "text": "We covered what SAR was and how it works\nWe looked at what amplitude and phase were\nWe looked at what types of SAR data we would most commonly come across and this was VV & VH\nWe also looked at the different bands of SAR data and the implications these could have on the sorts of analysis and use cases for remote sensing imagery\nWe then looked at how SAR data can be used for change detection and this could broadly be done in four ways:\n\nSimple image pixel subtraction\nInterferometry (InSAR and DInSAR)\nMachine Learning approaches - mostly discussed ChangeOS paper\nStatistical tests - discussed Ollie’s working paper on Pairwise T-tests for building damage assessments in Gaza and Ukraine. This approach seemed to outperform the deep-learning approach from ChangeOS. However there were a few questions about whether the two approaches were comparing apples with apples as on further reading the ChangeOS paper is an Object-based deep-learning model as opposed to a pixel-level model which may influence a direct comparison in terms of method",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 9 Use of SAR data</span>"
+    ]
+  },
+  {
+    "objectID": "ld_week_9.html#application",
+    "href": "ld_week_9.html#application",
+    "title": "5  Week 9 Use of SAR data",
+    "section": "5.2 Application",
+    "text": "5.2 Application\nAfter reading the ChangeOS paper (Zheng et al., 2021) to understand how deep learning approaches have been considered in Remote Sensing change detection. One question I have is around the appropriateness of the approach the ChangeOS team have used for change detection, they have discounted the use of a full Siamese Neural Network architecture as they have found difficulty with sensitivity to minor vs complete building damage, however this is in relation to high-resolution satellite imagery and not SAR data. Also they have leveraged ResNet pretrained Convolutional Neural Network and removed the final layer of the model to apply it to this domain, however, there is a question as to whether the learned feature representations from the ResNet model are appropriate for analysis of satellite image features, which are not included in the ResNet training data and are very different in structure to the training data used in ResNet (everyday objects), which would inevitably have an effect on model performance. Resources allowing it would be more appropriate to train a model from scratch for satellite imagery detection. On another point the ChangeOS paper seems to generative in the sense that it generates masks for the pixels that have been damaged, however, in doing so they depart again from the traditional architecture of the Siamese Neural Network architecture and potentially introduce model error as their model is no longer trying to identify the degree of similarity between two images but rather the objects within each image that may differ. The approach they have used is interesting however there are a number of architectural design choices that I would not have made and rather used a an approach that would have split up areas of interest into distinct regions i.e. spatial index grid like Google S4 or Uber H3 and compared the before and after images to identify the degree of change / similarity and then aggregated joined those areas of dissimilarity against the original buildings polygon dataset as Ballinger has done in his paper (Ballinger, 2024).",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 9 Use of SAR data</span>"
+    ]
+  },
+  {
+    "objectID": "ld_week_9.html#reflection",
+    "href": "ld_week_9.html#reflection",
+    "title": "5  Week 9 Use of SAR data",
+    "section": "5.3 Reflection",
+    "text": "5.3 Reflection\nOverall through reflecting on the work I have done in the past when I was asked to carry out anomaly detection analysis on water pump time series reading, the most appropriate methods were rarely deep learning approaches. Yes recurrent neural networks were okay if you had balanced data, however, the very nature of anomaly detection involves a class imbalance as you are looking to predict whether a value is abnormal. The advice I received from a data scientist who works at Astra Zeneca was to use Gaussian Mixture Models, if those failed to do the job to use Shewart Control Charts and Western Electric Company Power rules which basically aim to look at time series readings (assuming that a system operates within a fixed variation of values when working normally) and detects patterns of values that are highly unlikely to occur within a normal baseline of values. I am surprised this is not used as the change detection question is less of a cross-sectional question and more of a temporal question, and therefore I would expect to see methods like Shewart Control Charts and WECO rules, gaussian mixture models and recurrent neural networks feature in the conversation a bit more.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 9 Use of SAR data</span>"
+    ]
+  },
+  {
+    "objectID": "ld_week_9.html#references",
+    "href": "ld_week_9.html#references",
+    "title": "5  Week 9 Use of SAR data",
+    "section": "5.4 References",
+    "text": "5.4 References\nBallinger, O. (2024) ‘Open Access Battle Damage Detection via Pixel-Wise T-Test on Sentinel-1 Imagery’. Available at: https://arxiv.org/abs/2405.06323. Zheng, Z. et al. (2021) ‘Building damage assessment for rapid disaster response with a deep object-based semantic change detection framework: From natural disasters to man-made disasters’, Remote Sensing of Environment, 265, p. 112636. Available at: https://doi.org/10.1016/j.rse.2021.112636.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 9 Use of SAR data</span>"
     ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "5  Summary",
+    "title": "6  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]
