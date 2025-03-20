@@ -9,7 +9,7 @@ book:
   date: "2/11/2025"
   chapters:
     - index.qmd
-    - intro.qmd
+    - ld_week_1.qmd
     - ld_week_2.qmd
     - summary.qmd
     - references.qmd
