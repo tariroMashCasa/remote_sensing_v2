@@ -1,5 +1,5 @@
 ---
-title: "Week 6 - Introductio to Google Earth Engine"
+title: "Week 6 - Introduction to Google Earth Engine"
 format: html
 editor: visual
 ---
