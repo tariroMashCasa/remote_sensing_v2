@@ -1,0 +1,27 @@
+---
+title: "Week 6 - Introductio to Google Earth Engine"
+format: html
+editor: visual
+---
+
+## Summary 
+
+- Learned how to access Google Earth Engine using the code editor
+- Learned why it’s a valuable technology to know how to use compared to doing remote sensing analysis / science on local machines or onsite hardware
+- Learned about some GEE concepts to be aware of when accessing and exporting data including the need to filter by date and region of interest (ROI) as well as different reducing operations. This included learning about kernels, which was interesting as it is something that has also come up in the Data Science module in the context of convolutional neural networks.
+
+
+## Application 
+
+This week, I decided to read a paper on texture analysis as this is a similar but slightly different technique to the use of convolutions for computer vision in data science. Ideally I wanted to understand what is similar about the two approaches and what’s the difference / is one better to use for certain analysis or are they two sides of the same analytical coin. The paper I found is “Texture Unit, Texture Spectrum, Texture Analysis” (He and Wang, 1990).
+
+The paper shows how using using a simple kernel, a remote sensing image can be adjusted to highlight specific textures on the texture spectrum. The identification of textures is a useful activity in practice as it can be used to identify specific mineral signatures that display unique texture spectrum profiles. It would be interesting to understand if the methods proposed in this paper are still in use today. Having spoken with Andy it seems like texture analysis isn’t something that he has come across much suggesting perhaps that this approach has fallen out of fashion or has been replaced by other techniques to identify specific minerals as their spectrum wavelengths instead or in addition to their texture.
+
+
+## Reflection
+
+The challenge associated with texture analysis if it was to be applied to urban settings would be the wide variation in interpretability associated with matching specific textures to specific land cover types as presumably different minerals and materials can be used to support the same or different land uses. That said for some task like looking at urban green spaces or tree covers may be somewhat tractable. Nonetheless the approach is 30 years old and as such has likely been superseded by more state of the art methods such as Convolutional Neural Networks which in principle achieve the same effects in either a supervised manner.
+
+## References
+
+He, D.-C. and Wang, L. (1990) ‘Texture unit, texture spectrum, and texture analysis’, IEEE transactions on Geoscience and Remote Sensing, 28(4), pp. 509–512.
