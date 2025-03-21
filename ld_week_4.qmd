@@ -10,7 +10,11 @@ This week we’ve been asked to look into a policy challenge that could benefit 
 
 Pollutants monitored by Sentinel5P ([source](https://sentiwiki.copernicus.eu/web/s5p-applications)):
 
+![](images/week_4_policy_sentinel_5p_emissions_monitored_table.png)
+
 CAMS data monitored ([source](https://ads.atmosphere.copernicus.eu/datasets/cams-europe-air-quality-reanalyses?tab=overview)):
+
+![](images/week_4_policy_CAMS_emissions_monitored_table.png)
 
 ## Application
 
