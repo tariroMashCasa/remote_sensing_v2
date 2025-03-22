@@ -12,41 +12,41 @@
   {
     "objectID": "ld_week_1.html",
     "href": "ld_week_1.html",
-    "title": "1  Week 1 Learning Diary",
+    "title": "1  Week 1 - Learning Diary",
     "section": "",
     "text": "1.1 Summary",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 Learning Diary</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 - Learning Diary</span>"
     ]
   },
   {
     "objectID": "ld_week_1.html#summary",
     "href": "ld_week_1.html#summary",
-    "title": "1  Week 1 Learning Diary",
+    "title": "1  Week 1 - Learning Diary",
     "section": "",
     "text": "Covered how remote sensing data is created and collected with a focus on two main different types of satellites, Landsat 8 and Sentinel 2\nDiscussed what the data produced from the sensors on the satellites is, and how it is typically received. This included looking at the different spectral bands from visible (RGB) to near infrared and higher spectral bands\nAlso spoke about some of the associated trade-offs that are made when working with satellites i.e. cloud cover may affect the visible spectral bands, as well as the revisit frequency differs for different types of satellites and as does the spatial resolution i.e. high-resolution, medium resolution and low resolution",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 Learning Diary</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 - Learning Diary</span>"
     ]
   },
   {
     "objectID": "ld_week_1.html#applications",
     "href": "ld_week_1.html#applications",
-    "title": "1  Week 1 Learning Diary",
+    "title": "1  Week 1 - Learning Diary",
     "section": "1.2 Applications",
     "text": "1.2 Applications\n\nIt was interesting to understand how and why different satellite instruments are used in remote sensing of the earth as well as other planets and interstellar systems.\nIt is now clearer to me why for example radio equipment has a markedly different shape compared to optical image sensors as they are focused on wavelengths with different frequencies\nThe NASA paper provided a wide-ranging overview on the history and application of different satellite equipment in remote sensing, however, it would have been interesting to understand considerations around revisit times and the degree to which image correction techniques can introduce bias / or what the appropriate caveats an observer should bear in mind when interpreting imagery from, for example a gamma ray sensor, such as how much noise is introduced by the Compton scattering process?",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 Learning Diary</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 - Learning Diary</span>"
     ]
   },
   {
     "objectID": "ld_week_1.html#reflections",
     "href": "ld_week_1.html#reflections",
-    "title": "1  Week 1 Learning Diary",
+    "title": "1  Week 1 - Learning Diary",
     "section": "1.3 Reflections",
     "text": "1.3 Reflections\n\nBased on working with different parts of government central and local, EO data is most likely to be used by a central govt. dept like Defra or Cabinet Office, FCO or MOD. The challenge would be to be able to explain the value and insight provided from the EO data to non-technical stakeholders whilst also explaining why it is better than the alternative which is doing nothing. This point relates to the argument that just because it is not the best / cleanest data doesn’t mean it provides no value. This value however will need to be weighed against the ongoing reliability and ease of implementation as any policy interventions such as reforestation that is going on at different govt land parcels for example will need to be monitored to assess its efficacy.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 Learning Diary</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1 - Learning Diary</span>"
     ]
   },
   {
@@ -62,51 +62,51 @@
   {
     "objectID": "ld_week_3.html",
     "href": "ld_week_3.html",
-    "title": "3  ld_week_3",
+    "title": "3  Week 3 - Corrections",
     "section": "",
     "text": "3.1 Summary",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>ld_week_3</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3 - Corrections</span>"
     ]
   },
   {
     "objectID": "ld_week_3.html#summary",
     "href": "ld_week_3.html#summary",
-    "title": "3  ld_week_3",
+    "title": "3  Week 3 - Corrections",
     "section": "",
     "text": "This week’s lecture looked at how corrections are a key part of using remote sensing data and how very rarely we will ever work with raw/uncorrected images. We discussed concepts like how the angle at which passive images are captured can lead to variations in visible images, such as the presence of shadows or variations in absolute values due to atmospheric conditions if not adjusted for. I found the discussion around using water as a reference to normalise images interesting as water in effect was used as a basis to normalise everything else as it absorbs a lot of spectrum and can be treated as a zero value. Also, the discussion around shadow detection was another interesting one as depending on when image passover occur and the angles of the satellites the same locations can end up with different values due to shadows for example, due to seasonal variation and associated sun angles. Another common form of correction was in relation to cloud cover. We spoke about how some of the cloud masks offered by services like Google Earth Engine seem like a good idea in principle but in practice can have unintended consequences, such as removing land features which are mistakenly interpreted as clouds. The suggested way to do this is to filter based on cloud percentage rather than use cloud masks if that is possible. Alternatively, SAR data can be used to bypass clouds altogether, but may not be suitable if you’re interested in a specific band like SWIR etc… for your analysis.\nAlso, Andy also mentioned how some dimension reduction techniques like PCA can be used in an interesting manner to be able to show changes in land cover by incorporating the dates elements within the PCA process. I was initially a bit nervous about this topic as it seemed a bit esoteric, however, as I will likely be using remote sensing imagery as part of my dissertation it made sense to understand what adjustments had been made to the data I would be using to make comparisons across different time periods, geographies and instruments comparable to each other, which if not done could lead to erroneous conclusions.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>ld_week_3</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3 - Corrections</span>"
     ]
   },
   {
     "objectID": "ld_week_3.html#application",
     "href": "ld_week_3.html#application",
-    "title": "3  ld_week_3",
+    "title": "3  Week 3 - Corrections",
     "section": "3.2 Application",
     "text": "3.2 Application\nThis week, I’ve looked at how multiple different satellite instruments can be used to improve the spatial granularity of changes in methane done using a trio of Sentinel 5P, Sentinel 3 and Sentinel 2 (Pandey et al., 2023). Their analysis uses a multi-band multi-pass (MBMP) method which basically preprocesses out some noisy features like clouds in pixels that have no methane detected as well as doing some orientation analysis and using a model to generate valid methane values. They also make use of aggregations and filtering operations in this preprocessing stag as well as another dataset to understand wind speeds, as this is a crucial variable allowing for better detection methane plumes. Their approach to using the three satellites can be illustrated by the following image:\n\nBy identifying methane abnormalities with Sentinel-5P they are then able to look for similar pass overs in the sentinel 2 & 3 satellites and by looking at the SWIR bands narrow down the likely locations where the emission leaks originated from.\nNonetheless there are limits to how precise their approach can be as for example if there are multiple leaks in close proximity of each other these cannot be identified due to pixel resolution limitations.\nThey make a good case for what each of the satellites offer: 1. Sentinel-5P - identifies methane emission anomalies and serves as the starting point for further analysis 2. Sentinel 3 - with its daily coverage can be used to identify when emissions started and for how long they persist as well as narrow down the likely locations 3. Sentinel 2 - with the highest spatial granularity it is able to further narrow down likely emission originating locations\nThey also make an interesting observation regarding how differences in spectrum wavelength band ranges and spatial resolution interplay with each other by doing an analysis of emission plumes identified by Sentinel 2 and Sentinel 3 respectively. The main takeaway is that although Sentinel 3 has a narrower spectral wavelength band for its SWIR bands, in principle making it better for measuring methane emissions), Sentinel 2 has a higher spatial resolution and even with a wider SWIR band range is able to identify more methane emission plumes as there is less noise per pixel compared to Sentinel 3.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>ld_week_3</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3 - Corrections</span>"
     ]
   },
   {
     "objectID": "ld_week_3.html#reflection",
     "href": "ld_week_3.html#reflection",
-    "title": "3  ld_week_3",
+    "title": "3  Week 3 - Corrections",
     "section": "3.3 Reflection",
     "text": "3.3 Reflection\nThe MBMP approach here shows how, through using remote sensing data from multiple freely available satellites, it is possible to identify methane anomalies at a high level and using more granular and more frequent data, narrow down possible location candidates down to the days or even times of day (Pandey et al., 2023). Having previously tried to acquire satellite data from major providers, the default for achieving such an outcome would be to use a tasking satellite, which would be extremely costly if applied globally and/or for a prolonged period of time.\nThe research raises an interesting point about the trade-offs involved with the instruments, pass over times and spatial resolution available from the current generation of satellites. As I would typically have looked for a single solution that had the capability to answer the question I was facing (as suggested by Anton Chigurh a fictional character from No Country for Old Men, show below).\n\nHowever, the paper makes a case for making the best use of what is available and instead of looking for a swiss-army knife, perhaps it would be best to instead use a crockery set.\nAll of this notwithstanding, there is an underlying concern I have with time period a tiered multi-device and multi-satellite mission approach like MBMP can be valid for. Relying on multiple missions exposes your risk to all of them, or put another way, when one mission ends, so does your ability to continue your approach. Despite the benefit of the built-in redundancy of having multiple satellites covering the same locations, there is a counter-intuitive risk associated with this as well. Unless the global community can provide comparable satellites running on overlapping mission time-frames with guarantees in place that historic datasets like Sentinel 3 will be able to continue being provided in some shape or form, it will remain a challenge for policymakers and policy evaluators to make remote sensing a primary component of their policy evaluation toolkit.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>ld_week_3</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3 - Corrections</span>"
     ]
   },
   {
     "objectID": "ld_week_3.html#references",
     "href": "ld_week_3.html#references",
-    "title": "3  ld_week_3",
+    "title": "3  Week 3 - Corrections",
     "section": "3.4 References",
     "text": "3.4 References\nPandey, S. et al. (2023) ‘Daily detection and quantification of methane leaks using Sentinel-3: a tiered satellite observation approach with Sentinel-2 and Sentinel-5p’, Remote Sensing of Environment, 296, p. 113716. Available at: https://doi.org/10.1016/j.rse.2023.113716.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>ld_week_3</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3 - Corrections</span>"
     ]
   },
   {
@@ -202,151 +202,151 @@
   {
     "objectID": "ld_week_7.html",
     "href": "ld_week_7.html",
-    "title": "6  Week 7 Classification I",
+    "title": "6  Week 7 - Classification I",
     "section": "",
     "text": "6.1 Summary\nIn terms of how we can apply classification on remote sensing images ourselves, we covered both supervised and unsupervised learning. - Supervised learning: we looked at Classification and Regression Trees (CARTs) which I have also covered in the Data Science module as well as the use of SVMs. Looking at tree based methods we learned about how a single CART model works and the underlying logic used to determine a class, as well as some of the evaluation techniques such as gini-impurity, which as I learned is also how the hierarchy of variables used in the splitting of the tree is decided on. Andy made the point that tree methods are highly susceptible to overfitting and practitioners need to be careful about the number of samples in each split. One proposed way of avoiding having a model that is overfitted to the training data was to ensure a minimum number of samples of x (i.e. 20 samples for example). This is similar to the parameter available to clustering algorithms like HDBSCAN and DBSCAN. Another approach to overcome this risk of overfitting is to consider using random forests as opposed to single tree models. Random forests are less likely to overfit due to their ensemble nature, with different decision rules (logic) being used by different trees in the forest, however the trade-off here is the reduction in interpretation. I believe there is a way to see and visualise each tree, however, in practice this is tedious and time consuming. Perhaps someone should develop a python package / R package that can aggregate the decision rules and provide the user with a higher-level summary of what is going on in the forest. We also covered support vector machines, which I have come across before but not used much in my career. I’m not sure why SVMs aren’t as popular as other methods but perhaps they sit in an awkward zone between highly interpretable methods like linear regression and highly performant methods like neural networks. - Unsupervised learning: we covered k-means for classification with some variants such as cluster busting. K-means is an unsupervised learning approach that I’ve come across both in QUant Methods as well as Data Science. Typically it is the default option used for most unsupervised learning as it is intuitive and relative easy to deploy (computationally) at least compared to other unsupervised techniques like Gaussian Mixture Methods. However it does make a lot of assumptions mainly it assumes the means identified in the clusters conforms to the structure of the data so for example if the data does not conform to a convex shape i.e. radial or straightline result in meaningless clusters.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 7 Classification I</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 7 - Classification I</span>"
     ]
   },
   {
     "objectID": "ld_week_7.html#summary",
     "href": "ld_week_7.html#summary",
-    "title": "6  Week 7 Classification I",
+    "title": "6  Week 7 - Classification I",
     "section": "",
     "text": "This week we learned mainly about how classification has been applied in remote sensing as well as what different classification approaches are available for use with remote sensing data\nOne of the more well known examples of this was using classification to identify urban green spaces. I have used this data before as it is a class available in the Copernicus 5 yearly classification dataset available from the EU. (maybe look at how they classify these layers).\nAnother example of a well known use of classification was in tracking illegal foresting in Brazil. Hansen et al. (2013) developed a methodology for analysing high-resolution satellite imagery for evidence of illegal logging, which has helped law enforcement in Brazil combat this. There is also another example of where local authorities are trying to preserve Geoglyphs (national monuments or ancient sites and structures) that was shown on Bloomberg (here) that also gives some more background.\n\nBefore:\n\nAfter:",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 7 Classification I</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 7 - Classification I</span>"
     ]
   },
   {
     "objectID": "ld_week_7.html#application",
     "href": "ld_week_7.html#application",
-    "title": "6  Week 7 Classification I",
+    "title": "6  Week 7 - Classification I",
     "section": "6.2 Application",
     "text": "6.2 Application\nReading the Hansen paper (Hansen et al., 2013) published in Science is quite interesting as it provides evidence of the extent of global deforestation over a decade and as a result of it’s methods allows for nuanced interpretation of headline values i.e. being able to differentiate permanent forestry in Russia vs more seasonal forestry practices in Sweden. By carrying out the analysis at the pixel level the analysis makes a reasonable attempt to provide granularity while being from 30m images, allowing them to be able to comment on specific places rather than cities for example. The use of a global dataset like Landsat, which is available at little / no cost to researchers and policymakers, gives anyone who is looking to carry out any monitoring of deforestation in their areas of interest a relatively straight-forward approach to do this, as is highlighted by the author’s mentioning of the Brazilian state policies in regard to deforestation. However, regarding the underlying methodology used to determine whether deforestation has occurred, by using a binary variable in most cases (although the authors make clear they also look at change in variation within the same pixel) there is an underlying tension, as forest growth does not necessarily follow pixel patterns meaning there may be some unintended results that may occur around forest boundaries when determining whether a pixel is still forest when say it has reached 49% of the selected pixel. That said perhaps this is more a limitation of available technology and such an approach wouldn’t carry as much of a risk.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 7 Classification I</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 7 - Classification I</span>"
     ]
   },
   {
     "objectID": "ld_week_7.html#reflection",
     "href": "ld_week_7.html#reflection",
-    "title": "6  Week 7 Classification I",
+    "title": "6  Week 7 - Classification I",
     "section": "6.3 Reflection",
     "text": "6.3 Reflection\nThe lectures on classification in remote sensing have been interesting for me given my previous job in consulting and data science to see how it is approached in a different domain. The applications make sense to me intuitively i.e. pixel classification used to say whether a pixel has x or y type of land cover. However the examples of where I’ve come across the use of remote-sensing data has been in the sustainability space and this has tended to use remote-sensing as an input in order to identify areas for policy interventions, the most common examples being rewilding, peatland assessment or biodiversity analysis. I would have thought insurance companies and others would use remote-sensing data such as land cover classifications regularly but perhaps the domain specificity of the analytical approaches / software lead to other options (I’ll send someone there on a plane to verify this for me - which is something a client previously said) being preferred. So I find myself wondering which organisations, aside from researchers, policy–makers, regulators, sustainability teams and maybe NGOs who would benefit from remote-sensing classification data? Perhaps agriculture, or financers of agriculture probably would gain some benefit from these techniques but the methods would have to be informed by domain experts to get their buy-in and ongoing use. As with all data science methods, either proving it works in terms of increased yields or decreased soil nutrient depletion would need to be justified to overcome the BAU default of most organisations, which remote-sensing data with it’s relatively long-run temporal data has an advantage, and with agricultural land parcels being relatively large spatial resolution shouldn’t be too much of an issue relative to very specific requests like one I’ve had before which was to classify every parking space from satellite imagery.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 7 Classification I</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 7 - Classification I</span>"
     ]
   },
   {
     "objectID": "ld_week_7.html#references",
     "href": "ld_week_7.html#references",
-    "title": "6  Week 7 Classification I",
+    "title": "6  Week 7 - Classification I",
     "section": "6.4 References",
     "text": "6.4 References\nHansen, M.C. et al. (2013) ‘High-Resolution Global Maps of 21st-Century Forest Cover Change’, Science, 342(6160), pp. 850–853. Available at: https://doi.org/10.1126/science.1244693.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 7 Classification I</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 7 - Classification I</span>"
     ]
   },
   {
     "objectID": "ld_week_8.html",
     "href": "ld_week_8.html",
-    "title": "7  Week 8 Classification II",
+    "title": "7  Week 8 - Classification II",
     "section": "",
     "text": "7.1 Summary",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 8 Classification II</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 8 - Classification II</span>"
     ]
   },
   {
     "objectID": "ld_week_8.html#summary",
     "href": "ld_week_8.html#summary",
-    "title": "7  Week 8 Classification II",
+    "title": "7  Week 8 - Classification II",
     "section": "",
     "text": "Conceptualising remote sensing images i.e. should we consider these as a pixels, objects, regions etc..\nExamples of some datasets and implementations of classification with EO data - mainly Dynamic World and MODIS\n\nHow useful is some of the data i.e. the resolution from Dynamic World - benefits and drawbacks\n\nData pipeline for classification and the implications for how to train your classification models i.e. cross-validation spatial or not spatial or doing your train test splits at the object level\nAccuracy evaluation methods\n\nConfusion matrix (looks at precision and recall albeit with slightly different names (i.e. producer accuracy vs user accuracy) to standard ML descriptions)\nF1 score - better than standard user accuracy and producer accuracy\nROC & AUC - probably the best as it takes into account both accuracy and recall, basically all four boxes in the confusion matrix\n\nCross validation accounting for spatial autocorrelation\n\nThis is important in particular as the classification methods we have learned about in remote sensing tend to focus on pixel level classification which is most susceptible to spatial autocorrelation which is to say depending on what the values are in adjacent pixels, the class prediction influenced by these values",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 8 Classification II</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 8 - Classification II</span>"
     ]
   },
   {
     "objectID": "ld_week_8.html#application",
     "href": "ld_week_8.html#application",
-    "title": "7  Week 8 Classification II",
+    "title": "7  Week 8 - Classification II",
     "section": "7.2 Application",
     "text": "7.2 Application\nThis week based on a question I raised in the lecture about the impact of temporal autocorrelation in selecting train test split samples I would like to try to investigate the issue a bit further. I came across a paper about fallowing temporal patterns in Spain which made reference to temporal autocorrelation (Recuero et al., 2019). This paper did use a technique to calculate temporal autocorrrelation values at different time intervals, these were linked to their overall research questions however they used the temporal autocorrelation values as features rather than as a basis for train-test sample splitting. Nonetheless the paper was interesting as an example of how classification is being applied to measure the effectiveness of a EU wide policy, in this case the Common Agricultural Policy.\nRecuero et al. seek to develop a better approach to existing land classification datasets which do not fully reflect the variation in land classification, in particular agricultural land that is subject to fallowing, which is basically a land management technique which allows for agricultural land to be left deliberately idle for a period of years in order for soil nutrients to be allowed to improve before being actively farmed and so on. As part of the Common Agricultural Policy farmers are paid to do this, however, land classification data for these parcels of land do not take into account their changing land use, instead giving the same parcel of land the same classification regardless of whether the land is actively being farmed or fallowed (being left idle). They process a technique using temporal autocorrelation values of NDVI to classify which areas of land are fallowed. They compare their classifications against ground truth data from the Spanish state. They present two sets of results one seemingly for their training and validation sets combined, shown below:\n\n\n\nConfusion matrix on training and validation data\n\n\nThey also present the performance of their classification technique on their test data also shown below:\n\n\n\nConfusion matrix on test data\n\n\nThis paper is a good example of the concepts covered in the lecture in particular, showing how results from a classification model are presented in the remote-sensing field with producer and user accuracies as well as using Kappa coefficients.\nAs can be seen they claim to have have good performance on their training and validation set and moderate performance on their testing set. I think that the performance on the training and validation set is by the by as it doesn’t provide the user any indication of what the model will actually perform like in real life so I would generally ignore it but in this case I’m highlighting it as they claim to have high producer and user accuracies, however these do not use the mean average but rather a weighted average to arrive at these values. Based on my experience in the data science field it would be more prudent to report a standard mean average as ultimately you would like to penalise incorrect predictions when training models, the second issue is the high degree of class imbalance in the groups they are predicting, which based on the model they are using (a random forest classifier) will be affected by class imbalance. Moving on to the test results, the most immediate observation is that they get 0% of one class predicted correctly (worse than random guessing), which seems to corroborate my initial concerns about their class imbalance, suggesting their model has overfit to their training data.\nIn the rest of the paper they go on to conclude that their results are consistent with empirical evidence and suggest that their approach could serve as a basis for a new classification or improved land cover data product able to provide an indication of fallowed land across Spain. I think this is a really good point as it identifies a gap in the existing data environment, proposes a methodology to address it and validates its performance against ground truth data, modelling methodology limitations notwithstanding.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 8 Classification II</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 8 - Classification II</span>"
     ]
   },
   {
     "objectID": "ld_week_8.html#reflections",
     "href": "ld_week_8.html#reflections",
-    "title": "7  Week 8 Classification II",
+    "title": "7  Week 8 - Classification II",
     "section": "7.3 Reflections",
     "text": "7.3 Reflections\nOverall, Recuero et al.’s paper is a good example of how classification techniques can be applied to assist in the identification of data needed to assess the efficacy of a major EU policy. THey have provided their results in a well accepted manner providing the user transparency into how well their approach works. That said coming from a data science background there are a number of modelling choices they have made that I would not have, as well as some communication of their findings which seems to slightly overstate their findings. Their dataset seems small, that said this is perhaps because I tend to work with images, audio and system level datasets which tend to be well north of 100K rows, and this seems to affect the amount of training samples that can be provided to their models for training. Second, their use of weighted averages to report their results seems to overstate the performance of their model, as in practice this is not an approach I have seen before, this is because it is precisely the misclassification that people are interested in. The producer accuracy and user accuracy matrix results they have presented are similar in principle to precision and recall techniques used in standard machine learning, however, more commonly F1 scores and ROC / AUC is used for comparability. Lastly, as mentioned in our lecture perhaps had their train test samples been split taking spatial autocorrelation into account the performance of their approach would have fallen further. Nonetheless, I found their paper interesting and compelling as it was specific and aimed at meeting a deficiency in the existing land cover data products available for their region.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 8 Classification II</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 8 - Classification II</span>"
     ]
   },
   {
     "objectID": "ld_week_8.html#references",
     "href": "ld_week_8.html#references",
-    "title": "7  Week 8 Classification II",
+    "title": "7  Week 8 - Classification II",
     "section": "7.4 References",
     "text": "7.4 References\nRecuero, L. et al. (2019) ‘Fallowing temporal patterns assessment in rainfed agricultural areas based on NDVI time series autocorrelation values’, International Journal of Applied Earth Observation and Geoinformation, 82, p. 101890. Available at: https://doi.org/10.1016/j.jag.2019.05.023.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 8 Classification II</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 8 - Classification II</span>"
     ]
   },
   {
     "objectID": "ld_week_9.html",
     "href": "ld_week_9.html",
-    "title": "8  Week 9 Use of SAR data",
+    "title": "8  Week 9 - Use of SAR data",
     "section": "",
     "text": "8.1 Summary",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 9 Use of SAR data</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 9 - Use of SAR data</span>"
     ]
   },
   {
     "objectID": "ld_week_9.html#summary",
     "href": "ld_week_9.html#summary",
-    "title": "8  Week 9 Use of SAR data",
+    "title": "8  Week 9 - Use of SAR data",
     "section": "",
     "text": "We covered what SAR was and how it works\nWe looked at what amplitude and phase were\nWe looked at what types of SAR data we would most commonly come across and this was VV & VH\nWe also looked at the different bands of SAR data and the implications these could have on the sorts of analysis and use cases for remote sensing imagery\nWe then looked at how SAR data can be used for change detection and this could broadly be done in four ways:\n\nSimple image pixel subtraction\nInterferometry (InSAR and DInSAR)\nMachine Learning approaches - mostly discussed ChangeOS paper\nStatistical tests - discussed Ollie’s working paper on Pairwise T-tests for building damage assessments in Gaza and Ukraine. This approach seemed to outperform the deep-learning approach from ChangeOS. However there were a few questions about whether the two approaches were comparing apples with apples as on further reading the ChangeOS paper is an Object-based deep-learning model as opposed to a pixel-level model which may influence a direct comparison in terms of method",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 9 Use of SAR data</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 9 - Use of SAR data</span>"
     ]
   },
   {
     "objectID": "ld_week_9.html#application",
     "href": "ld_week_9.html#application",
-    "title": "8  Week 9 Use of SAR data",
+    "title": "8  Week 9 - Use of SAR data",
     "section": "8.2 Application",
     "text": "8.2 Application\nAfter reading the ChangeOS paper (Zheng et al., 2021) to understand how deep learning approaches have been considered in Remote Sensing change detection. One question I have is around the appropriateness of the approach the ChangeOS team have used for change detection, they have discounted the use of a full Siamese Neural Network architecture as they have found difficulty with sensitivity to minor vs complete building damage, however this is in relation to high-resolution satellite imagery and not SAR data. Also they have leveraged ResNet, a pretrained Convolutional Neural Network and removed the final layer of the model to apply it to this domain, however, there is a question as to whether the learned feature representations from the ResNet model are appropriate for analysis of satellite image features, which are not included in the ResNet training data and are very different in structure to the training data used in ResNet (everyday objects), which would inevitably have an effect on model performance. Resources allowing it would be more appropriate to train a model from scratch for satellite imagery detection. On another point the ChangeOS paper seems to be generative in the sense that it generates masks for the pixels that have been damaged, however, in doing so they depart again from the traditional architecture of the Siamese Neural Network architecture and potentially introduce model error as their model is no longer trying to identify the degree of similarity between two images but rather the objects within each image that may differ. The approach they have used is interesting however there are a number of architectural design choices that I would not have made and would rather have used an approach that would have split up areas of interest into distinct regions i.e. spatial index grid like Google S2 or Uber H3 and compared the before and after images to identify the degree of change / similarity and then aggregated joined those areas of dissimilarity against the original buildings polygon dataset as Ballinger has done in his paper (Ballinger, 2024).",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 9 Use of SAR data</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 9 - Use of SAR data</span>"
     ]
   },
   {
     "objectID": "ld_week_9.html#reflection",
     "href": "ld_week_9.html#reflection",
-    "title": "8  Week 9 Use of SAR data",
+    "title": "8  Week 9 - Use of SAR data",
     "section": "8.3 Reflection",
     "text": "8.3 Reflection\nOverall through reflecting on the work I have done in the past when I was asked to carry out anomaly detection analysis on water pump time series reading, the most appropriate methods were rarely deep learning approaches. Yes recurrent neural networks were okay if you had balanced data, however, the very nature of anomaly detection involves a class imbalance as you are looking to predict whether a value is abnormal. The advice I received from a data scientist who works at Astra Zeneca was to use Gaussian Mixture Models, if those failed to do the job to use Shewart Control Charts and Western Electric Company Power rules which basically aim to look at time series readings (assuming that a system operates within a fixed variation of values when working normally) and detects patterns of values that are highly unlikely to occur within a normal baseline of values. I am surprised this is not used as the change detection question is less of a cross-sectional question and more of a temporal question, and therefore I would expect to see methods like Shewart Control Charts and WECO rules, gaussian mixture models and recurrent neural networks feature in the conversation a bit more.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 9 Use of SAR data</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 9 - Use of SAR data</span>"
     ]
   },
   {
     "objectID": "ld_week_9.html#references",
     "href": "ld_week_9.html#references",
-    "title": "8  Week 9 Use of SAR data",
+    "title": "8  Week 9 - Use of SAR data",
     "section": "8.4 References",
     "text": "8.4 References\nBallinger, O. (2024) ‘Open Access Battle Damage Detection via Pixel-Wise T-Test on Sentinel-1 Imagery’. Available at: https://arxiv.org/abs/2405.06323. Zheng, Z. et al. (2021) ‘Building damage assessment for rapid disaster response with a deep object-based semantic change detection framework: From natural disasters to man-made disasters’, Remote Sensing of Environment, 265, p. 112636. Available at: https://doi.org/10.1016/j.rse.2021.112636.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 9 Use of SAR data</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 9 - Use of SAR data</span>"
     ]
   },
   {

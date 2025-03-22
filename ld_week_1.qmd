@@ -1,5 +1,5 @@
 ---
-title: "Week 1 Learning Diary"
+title: "Week 1 - Learning Diary"
 format: html
 editor: visual
 ---
