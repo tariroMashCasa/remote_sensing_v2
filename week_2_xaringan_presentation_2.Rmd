@@ -16,8 +16,7 @@ output:
 
 # What is Sentinel 1's SAR sensor?
 
-IMG placeholder
-
+![Alt text](images/sentinel_1_satellite.png)
 
 ---
 
@@ -34,19 +33,16 @@ IMG placeholder
 - Ollie Ballingers's PWTT research on building damage detection
   - UCL lecturer Ollie Ballinger has released a paper on using SAR imagery to detect damage in buildings.
   - His work explores the trade-offs of using machine learning approaches compared to statistical based approaches as well as discusses the two main ways SAR imagery is used to detect change and their relative merits and drawbacks, namely through phase change or amplitude change.
+  
+![Alt text](images/pwtt_pre_post.png)
 
 
 ---
 
-# How is it used in to understand the recent fire outbreaks in California?
-
-Ban et al. (2020) on using Sentinel SAR data to train a deep neural network classifier for near-real time fire detection.
-
----
-
-# How is it used in to understand the recent fire outbreaks in California?
+# How is it used  to understand the recent fire outbreaks in California?
 
 - Ban et al. (2020) on using Sentinel SAR data to train a deep neural network classifier for near-real time fire detection.
+
 
 
 ---
@@ -64,8 +60,9 @@ Ban et al. (2020) on using Sentinel SAR data to train a deep neural network clas
 
 # Trying it out on historic wild fires in California
 
-- What am i trying to do maybe add in the flow diagram of the analysis.
+- The approach I'm trying makes use of both the VV and VH bands to try detect fires.
 
+![Alt text](images/flow_diagram.png)
 
 
 ---
@@ -74,12 +71,13 @@ Ban et al. (2020) on using Sentinel SAR data to train a deep neural network clas
 
 .pull-left[
 VV backscatter similarity using a SNN for a location in California 
-
+![Alt text](images/VV change in backscatter for a random location which has had a fire.png)
 
 ]
 
 .pull-right[
 VH backscatter for the same location with fires overlaid (also using SNNs)
+![Alt text](images/VH change in backscatter for a random location which has had a fire.png)
 
 ]
 
