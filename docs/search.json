@@ -54,7 +54,7 @@
     "href": "ld_week_2.html",
     "title": "2  Week 2 - Presentation on Sentinel 1 Radar sensor",
     "section": "",
-    "text": "2.1 Using Xaringan to make presentations\nThis week’s practical focused on learning about a specific satellite sensor, which in my case was the Sentinel 1 Radar satellite and making a presentation using Xaringan in R which can be found below.\n```{html}",
+    "text": "2.1 Using Xaringan to make presentations\nThis week’s practical focused on learning about a specific satellite sensor, which in my case was the Sentinel 1 Radar satellite and making a presentation using Xaringan in R which can be found below.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 2 - Presentation on Sentinel 1 Radar sensor</span>"
     ]

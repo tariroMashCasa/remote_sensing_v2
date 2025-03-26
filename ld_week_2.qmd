@@ -8,4 +8,8 @@ editor: visual
 
 This week's practical focused on learning about a specific satellite sensor, which in my case was the Sentinel 1 Radar satellite and making a presentation using Xaringan in R which can be found below.
 
-\`\`\`{html} <iframe src="week_2_xaringan_presentation_2.html" width="100%" height="600px"></iframe>
+::: column-page
+<iframe src="week_2_xaringan_presentation_2.html" width="100%" height="700px">
+
+</iframe>
+:::
