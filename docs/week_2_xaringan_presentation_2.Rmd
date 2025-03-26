@@ -1,0 +1,95 @@
+---
+title: "Week 2 Learning Diary"
+subtitle: "Sentinel 1 SAR"
+author: "Tariro Mashongamhende"
+institute: "UCL, CASA"
+date: "2025/01/24 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+# What is Sentinel 1's SAR sensor?
+
+![Alt text](images/sentinel_1_satellite.png)
+
+---
+
+# How does it work and why am I interested in it?
+
+- Sentinel 1 is a an EU satellite which works by using a Radar base satellite instrument which generates images using Synthetic Aperture Radar (SAR)
+- Images are typically black and white and are the result of an active sensor that sends radiowaves and measures the time taken for the signal to return to the instrument
+- Radar wavelengths are typically longer than Red, Green and Blue wavelengths that are used in optical imagery in effect allowing SAR images to be free from cloud cover as the radiowaves are not affected by things like like clouds in the same way optical / passive sensors are such as those used in Sentinel 2
+
+---
+
+# How is it used in academic research at UCL?
+
+- Ollie Ballingers's PWTT research on building damage detection
+  - UCL lecturer Ollie Ballinger has released a paper on using SAR imagery to detect damage in buildings.
+  - His work explores the trade-offs of using machine learning approaches compared to statistical based approaches as well as discusses the two main ways SAR imagery is used to detect change and their relative merits and drawbacks, namely through phase change or amplitude change.
+  
+![Alt text](images/pwtt_pre_post.png)
+
+
+---
+
+# How is it used  to understand the recent fire outbreaks in California?
+
+- Ban et al. (2020) on using Sentinel SAR data to train a deep neural network classifier for near-real time fire detection.
+
+
+
+---
+
+# How can SAR be used for near real-time fire detection
+
+- In their paper "Near real-time fire detection" Ban et al. (2020) use Sentinel 1 SAR data to identify areas which have burn scars from recent fires. 
+- The paper is interesting as it goes into detail on how SAR data can be used to detect wildfires
+- Their approach involves using Sentinel 2 SWIR false color composites to identify burned areas and calculate the a difference in normalized burn ratio as pseudo-labels which are then used to train a neural network classifier with the SAR data from Sentinel 1 as input (X variables).
+- The false color composite they use which shows burned areas clearly in images is: SWIR1, SWIR2, SWIR1
+- In the process of training their model they make sure to use both VV and VH bands from Sentinel 1 to measure the changes in SAR backscatter.
+- During their analysis they noted that the expected change in SAR backscatter following a fire was observed in most cases with the exception of areas which were made up of non=forest vegetation (grassland). 
+- They also noted that VV backscatter is more sensitive to soil moisture than VH and therefore this implies changes in backscatter should also incorporate/normalise/adjust for changes in weather conditions to improve prediction accuracy.
+---
+
+# Trying it out on historic wild fires in California
+
+- The approach I'm trying makes use of both the VV and VH bands to try detect fires.
+
+![Alt text](images/flow_diagram.png)
+
+
+---
+# Initial results on testing the SNNs on the SAR images
+
+
+.pull-left[
+VV backscatter similarity using a SNN for a location in California 
+![Alt text](images/VV change in backscatter for a random location which has had a fire.png)
+
+]
+
+.pull-right[
+VH backscatter for the same location with fires overlaid (also using SNNs)
+![Alt text](images/VH change in backscatter for a random location which has had a fire.png)
+
+]
+
+---
+# Reflections
+
+I have been looking at identifying whether I can replicate. some fo the rationale in the Ban et al. (2020) paper by observing changes in SAR backscatter in places in Claifornia that have experienced fires according to the California Department of Forestry and Fire Protection.
+
+In doing so I have notived that real-world application of fire detection algorithms have to deal with many implementation challenges the most prominent of which are given below:
+
+- There is some difficulty in being able to attribute changes in backscatter to a fire event in the same month or the preceding month due to other events that can also result in changes to backscatter such as soil moisture levels (Ban et al., 2020)
+- VV and VH bands are not always affected in the same way by the same change (a fire event) i.e. a fire may lead to a change in both VV and VH, or only one of VV or VH or neither.
+- The intensity (measured through the use of a proxy GIS acres burned) seems to affect the identification of changes in SAR backscatter
+  - **small fires** - fires burning <1,000 acres don't seem to change SAR backscatter much at all suggesting other techniques may vbe better suited to idenfication of such systems
+  - **large fires** - fires burning > 1,000 acres do seem to cause a visible change in SAR backscatter in at least one of either VV or VH bands
