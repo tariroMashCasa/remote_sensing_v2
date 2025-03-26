@@ -16,8 +16,9 @@ output:
 
 # What is Sentinel 1's SAR sensor?
 
-![Alt text](images/sentinel_1_satellite.png)
-
+```{r, out.width="80%", out.height="60%"}
+knitr::include_graphics("images/sentinel_1_satellite.png")
+```
 ---
 
 # How does it work and why am I interested in it?
@@ -34,7 +35,9 @@ output:
   - UCL lecturer Ollie Ballinger has released a paper on using SAR imagery to detect damage in buildings.
   - His work explores the trade-offs of using machine learning approaches compared to statistical based approaches as well as discusses the two main ways SAR imagery is used to detect change and their relative merits and drawbacks, namely through phase change or amplitude change.
   
-![Alt text](images/pwtt_pre_post.png)
+```{r, out.width="100%", out.height="40%"}
+knitr::include_graphics("images/pwtt_pre_post.png")
+```
 
 
 ---
@@ -42,6 +45,10 @@ output:
 # How is it used  to understand the recent fire outbreaks in California?
 
 - Ban et al. (2020) on using Sentinel SAR data to train a deep neural network classifier for near-real time fire detection.
+
+```{r, out.width="50%", out.height="20%"}
+knitr::include_graphics("images/fire_detection.png")
+```
 
 
 
@@ -62,7 +69,10 @@ output:
 
 - The approach I'm trying makes use of both the VV and VH bands to try detect fires.
 
-![Alt text](images/flow_diagram.png)
+```{r, out.width="90%", out.height="70%"}
+knitr::include_graphics("images/flow_diagram.png")
+```
+
 
 
 ---
@@ -71,13 +81,20 @@ output:
 
 .pull-left[
 VV backscatter similarity using a SNN for a location in California 
-![Alt text](images/VV change in backscatter for a random location which has had a fire.png)
+
+```{r, out.width="100%", out.height="70%"}
+knitr::include_graphics("images/VV change in backscatter for a random location which has had a fire.png")
+```
+
+
 
 ]
 
 .pull-right[
 VH backscatter for the same location with fires overlaid (also using SNNs)
-![Alt text](images/VH change in backscatter for a random location which has had a fire.png)
+```{r, out.width="100%", out.height="70%"}
+knitr::include_graphics("images/VH change in backscatter for a random location which has had a fire.png")
+```
 
 ]
 
