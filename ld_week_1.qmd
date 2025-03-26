@@ -6,17 +6,16 @@ editor: visual
 
 ## Summary
 
-- Covered how remote sensing data is created and collected with a focus on two main different types of satellites, Landsat 8 and Sentinel 2
-- Discussed what the data produced from the sensors on the satellites is, and how it is typically received. This included looking at the different spectral bands from visible (RGB) to near infrared and higher spectral bands
-- Also spoke about some of the associated trade-offs that are made when working with satellites i.e. cloud cover may affect the visible spectral bands, as well as the revisit frequency differs for different types of satellites and as does the spatial resolution i.e. high-resolution, medium resolution and low resolution 
-
+-   Covered how remote sensing data is created and collected with a focus on two main different types of satellites, Landsat 8 and Sentinel 2
+-   Discussed what the data produced from the sensors on the satellites is, and how it is typically received. This included looking at the different spectral bands from visible (RGB) to near infrared and higher spectral bands
+-   Also spoke about some of the associated trade-offs that are made when working with satellites i.e. cloud cover may affect the visible spectral bands, as well as the revisit frequency differs for different types of satellites and as does the spatial resolution i.e. high-resolution, medium resolution and low resolution
 
 ## Applications
 
--	It was interesting to understand how and why different satellite instruments are used in remote sensing of the earth as well as other planets and interstellar systems. 
--	It is now clearer to me why for example radio equipment has a markedly different shape compared to optical image sensors as they are focused on wavelengths with different frequencies 
--	The NASA paper provided a wide-ranging overview on the history and application of different satellite equipment in remote sensing, however, it would have been interesting to understand considerations around revisit times and the degree to which image correction techniques can introduce bias / or what the appropriate caveats an observer should bear in mind when interpreting imagery from, for example a gamma ray sensor, such as how much noise is introduced by the Compton scattering process?
+-   It was interesting to understand how and why different satellite instruments are used in remote sensing of the earth as well as other planets and interstellar systems.
+-   It is now clearer to me why for example radio equipment has a markedly different shape compared to optical image sensors as they are focused on wavelengths with different frequencies
+-   The NASA paper provided a wide-ranging overview on the history and application of different satellite equipment in remote sensing, however, it would have been interesting to understand considerations around revisit times and the degree to which image correction techniques can introduce bias / or what the appropriate caveats an observer should bear in mind when interpreting imagery from, for example a gamma ray sensor, such as how much noise is introduced by the Compton scattering process?
 
 ## Reflections
 
--	Based on working with different parts of government central and local, EO data is most likely to be used by a central govt. dept like Defra or Cabinet Office, FCO or MOD. The challenge would be to be able to explain the value and insight provided from the EO data to non-technical stakeholders whilst also explaining why it is better than the alternative which is doing nothing. This point relates to the argument that just because it is not the best / cleanest data doesn’t mean it provides no value. This value however will need to be weighed against the ongoing reliability and ease of implementation as any policy interventions such as reforestation that is going on at different govt land parcels for example will need to be monitored to assess its efficacy. 
+-   Based on working with different parts of government central and local, EO data is most likely to be used by a central govt. dept like Defra or Cabinet Office, FCO or MOD. The challenge would be to be able to explain the value and insight provided from the EO data to non-technical stakeholders whilst also explaining why it is better than the alternative which is doing nothing. This point relates to the argument that just because it is not the best / cleanest data doesn’t mean it provides no value. This value however will need to be weighed against the ongoing reliability and ease of implementation as any policy interventions such as reforestation that is going on at different govt land parcels for example will need to be monitored to assess its efficacy.

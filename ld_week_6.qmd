@@ -4,19 +4,17 @@ format: html
 editor: visual
 ---
 
-## Summary 
+## Summary
 
-- Learned how to access Google Earth Engine using the code editor
-- Learned why it’s a valuable technology to know how to use compared to doing remote sensing analysis / science on local machines or onsite hardware
-- Learned about some GEE concepts to be aware of when accessing and exporting data including the need to filter by date and region of interest (ROI) as well as different reducing operations. This included learning about kernels, which was interesting as it is something that has also come up in the Data Science module in the context of convolutional neural networks.
+-   Learned how to access Google Earth Engine using the code editor as well as why it’s a valuable technology to know how to use compared to doing remote sensing analysis / science on local machines or onsite hardware. We also covered some GEE concepts to be aware of when accessing and exporting data including the need to filter by date and region of interest (ROI) as well as different reducing operations. This included learning about kernels, which was interesting as it is something that has also come up in the Data Science module in the context of convolutional neural networks.
+    -   The main argument as to why we should learn how to use GEE is that it is the most mentioned way that academics are carrying out analysis and research of remote sensing imagery. This is because it allows researchers to hand over the complexity and time consuming aspect of preprocessing and computation of data onto the Google infrastructure which is optimised to handle parallel computation. This is good as it allows researchers to spend more time on their area of expertise, research rather than on getting the right computer setup to process their data. That said there are a couple of concerns with using something like GEE. The first is about Google as a commercial enterprise, but more so as Google itself, wwhich has a history of cancelling products and applications based on internal business reasons as opposed to user-based factors, for a more comprehensive list [this website](https://killedbygoogle.com/) is dedicated to tracking all of the previous cases that this has happened. Aside from the risk of the rug being pulled from under our feet there is a second reason to not fully rely on GEE which is because GEE does not have all remote sensing datasets, as well as does not provide all the bands for all the satellite missions it does have data for, meaning that there may be scenarios where data not on GEE would neeed ot be merged with data that is on GEE for the same satellite. In cases like this it would make sense to just process the data from the same source altogether for the sake of processing pipeline simplicity.
+-   In the practical Andy discussed how we could aggregate / collect data and made clear that when we reduce on GEE we are typically doing this at the pixel level which in some cases is good as it gives us the opportunity to get the most representative pixel values for a location by getting it's median value, but also can introduce a risk of incorrect conclusions as this can result in comparison of different values from different time periods. This process is called feature vector engineering. He also mentioned that one way to deal with this could be to generate multiple aggregations such as by season or using quartile based approaches as well.
 
-
-## Application 
+## Application
 
 This week, I decided to read a paper on texture analysis as this is a similar but slightly different technique to the use of convolutions for computer vision in data science. Ideally I wanted to understand what is similar about the two approaches and what’s the difference / is one better to use for certain analysis or are they two sides of the same analytical coin. The paper I found is “Texture Unit, Texture Spectrum, Texture Analysis” (He and Wang, 1990).
 
 The paper shows how using using a simple kernel, a remote sensing image can be adjusted to highlight specific textures on the texture spectrum. The identification of textures is a useful activity in practice as it can be used to identify specific mineral signatures that display unique texture spectrum profiles. It would be interesting to understand if the methods proposed in this paper are still in use today. Having spoken with Andy it seems like texture analysis isn’t something that he has come across much suggesting perhaps that this approach has fallen out of fashion or has been replaced by other techniques to identify specific minerals as their spectrum wavelengths instead or in addition to their texture.
-
 
 ## Reflection
 

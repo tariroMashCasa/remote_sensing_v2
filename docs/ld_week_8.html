@@ -208,21 +208,21 @@ ul.task-list li input[type="checkbox"] {
 <section id="summary" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.1</span> Summary</h2>
 <ul>
-<li>Conceptualising remote sensing images i.e.&nbsp;should we consider these as a pixels, objects, regions etc..</li>
-<li>Examples of some datasets and implementations of classification with EO data - mainly Dynamic World and MODIS
+<li><p>We spoke about how we should even approach conceptualising remote sensing images when thinking about classification i.e.&nbsp;should we consider these as a pixels, objects, regions etc… I read a paper on super-pixels which seemed very interesting but when looking at the super pixels seemed to still not really align with the sorts of objects I would identify within a remote sensing image. I’ve come across the YOLO object detection models before in Agent-Based Modelling and Data Science, which are used for zero-shot object detection mostly of everyday objects, I’d never really considered such an approach would be related to remote sensing but could be an interesting addition to some of the super pixel work, generating objects such as stadiums as opposed to parts of stadiums which can be an output of super pixel analysis (as shown below):</p>
+<p><img src="images/super_pixelpng.png" class="img-fluid"></p></li>
+<li><p>We looked at some examples of some classification datasets / implementations of classification with EO data - mainly Dynamic World and MODIS</p>
 <ul>
-<li>How useful is some of the data i.e.&nbsp;the resolution from Dynamic World - benefits and drawbacks</li>
+<li>We got to see how a dataset like Dynamic World which seeks to provide near real-time updates to land cover change. An ambitious project however, it does seem to make some trade-offs along the spatial resolution which zoomed in look like amorphous blobs, making it perhaps better for analysis rather than visualisation. It is interesting that the project looks to provide near real-tiem data across the board as in reality most things don’t change all that often but some things do change very often. Also the things that do change might not change at the spatial resolution offered by Dynamic World meaning that it would probably struggle to capture in pixel variation that well. Perhaps it would need to still be paired with some Optical imagery to detect such changes.</li>
 </ul></li>
-<li>Data pipeline for classification and the implications for how to train your classification models i.e.&nbsp;cross-validation spatial or not spatial or doing your train test splits at the object level</li>
-<li>Accuracy evaluation methods
+<li><p>Data pipeline for classification and the implications for how to train your classification models i.e.&nbsp;cross-validation spatial, spatial cross validation or doing your train test splits at the object level</p>
+<ul>
+<li><strong>Cross validation accounting for spatial autocorrelation</strong> - this is important in particular as the classification methods we have learned about in remote sensing tend to focus on pixel level classification which is most susceptible to spatial autocorrelation which is to say depending on what the values are in adjacent pixels, the class prediction influenced by these values</li>
+</ul></li>
+<li><p>We also looked at the some of the most used evaluation criteria for remote sensing classification</p>
 <ul>
 <li>Confusion matrix (looks at precision and recall albeit with slightly different names (i.e.&nbsp;producer accuracy vs user accuracy) to standard ML descriptions)</li>
 <li>F1 score - better than standard user accuracy and producer accuracy</li>
 <li>ROC &amp; AUC - probably the best as it takes into account both accuracy and recall, basically all four boxes in the confusion matrix</li>
-</ul></li>
-<li>Cross validation accounting for spatial autocorrelation
-<ul>
-<li>This is important in particular as the classification methods we have learned about in remote sensing tend to focus on pixel level classification which is most susceptible to spatial autocorrelation which is to say depending on what the values are in adjacent pixels, the class prediction influenced by these values</li>
 </ul></li>
 </ul>
 </section>
